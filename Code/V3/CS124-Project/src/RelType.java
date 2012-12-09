@@ -1,0 +1,7 @@
+
+public enum RelType {
+	COMPOSITION,
+	INHERITANCE,
+	AGGREGATION,
+	ASSOCIATION,
+}

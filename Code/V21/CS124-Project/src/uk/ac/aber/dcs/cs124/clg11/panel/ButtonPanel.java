@@ -1,0 +1,49 @@
+package uk.ac.aber.dcs.cs124.clg11.panel;
+
+import javax.swing.*;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import uk.ac.aber.dcs.cs124.clg11.listener.*;
+
+public class ButtonPanel extends JPanel {
+	
+	private JLabel posText = new JLabel("Controls");
+	private JLabel aText = new JLabel("");
+	private JLabel bText = new JLabel("");
+	
+	private JLabel cText = new JLabel("");
+	
+	JButton upButton, downButton, resetButton, exportButton;
+	public Boolean addVar = false;
+	public Boolean addRel = false;
+
+	public ButtonPanel(CanvasPanel cP) {
+		
+		ButtonListener buttonList = new ButtonListener(this, cP);
+		this.setLayout(new GridLayout(6,0)); //Create new grid
+		this.add(posText);
+		
+		
+		upButton = new JButton("Add");
+        this.add(upButton);
+        upButton.addActionListener(buttonList);
+        
+        this.add(aText);
+        downButton = new JButton("Down");
+        this.add(downButton);
+        downButton.addActionListener(buttonList);
+        
+        this.add(bText);
+        
+        resetButton = new JButton("Reset");
+        this.add(resetButton);
+        resetButton.addActionListener(buttonList);
+        
+        this.add(cText);
+        
+        exportButton = new JButton("Export");
+        this.add(exportButton);
+        exportButton.addActionListener(buttonList);
+	}
+}
